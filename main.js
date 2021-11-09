@@ -1,12 +1,14 @@
-const {app, BrowserWindow} = require('electron')
+const { app, BrowserWindow, Menu, Tray, clipboard } = require('electron')
 const path = require('path')
 
 if (require('electron-squirrel-startup')) {
   app.quit();
 }
 
+let mainWindow = null;
+
 function createWindow () {
-  const mainWindow = new BrowserWindow({
+  mainWindow = new BrowserWindow({
     width: 200,
     height: 200,
     transparent: true,
@@ -24,7 +26,20 @@ function createWindow () {
   mainWindow.setAlwaysOnTop(true);
 }
 
+let tray = null
+function createTray () {
+  tray = new Tray(path.join(__dirname + '/icons/tray', 'tray-osx.png'))
+  const contextMenu = Menu.buildFromTemplate([
+    { label: 'Make slave work', click: function () { mainWindow.show() } },
+    { label: 'Hide slave for a while', click: function () { mainWindow.hide() } },
+    { label: 'Give a rest to slave', click: function () { app.quit() } },
+  ])
+  tray.setToolTip('Slave Tooltips.')
+  tray.setContextMenu(contextMenu)
+}
+
 app.whenReady().then(() => {
+  createTray()
   createWindow()
 
   app.on('activate', function () {
