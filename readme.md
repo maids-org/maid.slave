@@ -1,45 +1,41 @@
-# electron-quick-start
+<p align="center"><img height="300" width="300" src="./icons/icon.png" alt="Slave"/></p>
 
-**Clone and run for a quick way to see Electron in action.**
+<h2 align="center">Maid Slave</h2>
 
-This is a minimal Electron application based on the [Quick Start Guide](https://electronjs.org/docs/latest/tutorial/quick-start) within the Electron documentation.
+<p align="center"><a href="https://github.com/mad-maids/maid.slave/releases"><img src="https://img.shields.io/static/v1.svg?style=flat-square&label=release&message=1.0.0&logoColor=eceff4&logo=github&colorA=000000&colorB=ffffff"/></a></p>
 
-**Use this app along with the [Electron API Demos](https://electronjs.org/#get-started) app for API code examples to help you get started.**
+<p align="center"> A slave to pet on your desktop!.</p>
 
-A basic Electron application needs just these files:
+**This app was built with [electron.js](https://github.com/electron) in
+[Node.js](https://nodejs.org/en/). This app works as package modular, so don't
+worry about adding your own customizations. It will not affect to the app's
+working process.**
 
-- `package.json` - Points to the app's main file and lists its details and dependencies.
-- `main.js` - Starts the app and creates a browser window to render HTML. This is the app's **main process**.
-- `index.html` - A web page to render. This is the app's **renderer process**.
+## Documentations
 
-You can learn more about each of these components within the [Quick Start Guide](https://electronjs.org/docs/latest/tutorial/quick-start).
+-   **Electron.js** - [Website](https://www.electronjs.org/) [GiHub](https://github.com/electron)
 
-## To Use
+## Contributors
 
-To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+This bot exists thankfully for those who contributed this project and they are:
 
-```bash
-# Clone this repository
-git clone https://github.com/electron/electron-quick-start
-# Go into the repository
-cd electron-quick-start
-# Install dependencies
-npm install
-# Run the app
-npm start
-```
+-   [UwUssimo](https://github.com/uwussimo) _(Full Master)_ - The actual creator
+    of the project and active contributor
 
-Note: If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
+> Start contributing to become relative to maid!
+---
 
-## Resources for Learning Electron
+> The app page is still in beta phase so feel free to
+> [open issues](https://github.com/mad-maids/maid.slave/issues/new) and give me some
+> suggestions.
+---
 
-- [electronjs.org/docs](https://electronjs.org/docs) - all of Electron's documentation
-- [electronjs.org/community#boilerplates](https://electronjs.org/community#boilerplates) - sample starter apps created by the community
-- [electron/electron-quick-start](https://github.com/electron/electron-quick-start) - a very basic starter Electron app
-- [electron/simple-samples](https://github.com/electron/simple-samples) - small applications with ideas for taking them further
-- [electron/electron-api-demos](https://github.com/electron/electron-api-demos) - an Electron app that teaches you how to use Electron
-- [hokein/electron-sample-apps](https://github.com/hokein/electron-sample-apps) - small demo apps for the various Electron APIs
+> **Important Note:** Feel free to use this app's resources in your own projects, but 
+> please **don't** use it in any commercial project. Give us some credit and point
+> [(this repository)](https://github.com/mad-maids/maid.slave). If you're modifying
+> this source and making your own app, you have to ask for permission from
+> creator "UwUssimo" according to the CC0-1.0 license. Check [LICENSE](license)
+> for more info.
+<p align="center">Copyright &copy; 2020-2021 <a href="https://maid.uz" target="_blank">Mad Maids</a></p>
 
-## License
-
-[CC0 1.0 (Public Domain)](license.md)
+<p align="center"><a href="https://github.com/mad-maids/maid.ts/blob/master/license"><img src="https://img.shields.io/static/v1.svg?style=flat-square&label=License&message=CC0-1.0&logoColor=eceff4&logo=github&colorA=000000&colorB=ffffff"/></a></p>
