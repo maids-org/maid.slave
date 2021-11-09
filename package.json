@@ -1,0 +1,65 @@
+{
+  "name": "maid.slave",
+  "version": "1.0.0",
+  "description": "Maid Slave - A minimal slave for your desktop to pet",
+  "homepage": "https://maid.uz",
+  "repository": "https://github.com/mad-maids/maid.slave",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "io.github.mad-maids.maid.slave",
+    "productName": "Slave",
+    "copyright": "CC0-1.0",
+    "buildVersion": "1.0.0",
+    "mac": {
+      "target": "dmg",
+      "icon": "./icons/icon.icns",
+      "category": "public.app-category.productivity"
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "zip"
+      ],
+      "icon": "./icons/icon.ico",
+      "signAndEditExecutable": true,
+      "publisherName": "Mad Maids"
+    },
+    "nsis": {
+      "oneClick": "false",
+      "allowToChangeInstallationDirectory": "true",
+      "shortcutName": "Slave"
+    },
+    "linux": {
+      "target": [
+        "deb",
+        "tar.xz"
+      ],
+      "icon": "./icons/icon.icns",
+      "vendor": "Mad Maids",
+      "category": "Utility",
+      "executableName": "Slave",
+      "description": "A slave that can be petted and share some love for your desktop. Made by Mad Maids",
+      "synopsis": "A minimal slave for your desktop to pet"
+    }
+  },
+  "keywords": [
+    "Maids",
+    "Mad Maids",
+    "Slave",
+    "Petting",
+    "Desktop"
+  ],
+  "author": "Mad Maids",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^15.3.1",
+    "electron-builder": "^22.13.1"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
+  }
+}
