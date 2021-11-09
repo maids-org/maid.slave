@@ -2,7 +2,7 @@
 
 <h2 align="center">Maid Slave</h2>
 
-<p align="center"><a href="https://maid.uz/slave"><img src="https://img.shields.io/static/v1.svg?style=flat-square&label=release&message=1.0.0&logoColor=eceff4&logo=github&colorA=000000&colorB=ffffff"/></a></p>
+<p align="center"><a href="https://maid.uz/slave"><img src="https://img.shields.io/static/v1.svg?style=flat-square&label=release&message=github&logoColor=eceff4&logo=github&colorA=000000&colorB=ffffff"/></a></p>
 
 <p align="center"> A slave to pet on your desktop!.</p>
 
