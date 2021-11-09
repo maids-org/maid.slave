@@ -13,7 +13,7 @@ working process.**
 
 ## Documentations
 
--   **Electron.js** - [Website](https://www.electronjs.org/) [GiHub](https://github.com/electron)
+-   **Electron.js** - [Website](https://www.electronjs.org/) | [GiHub](https://github.com/electron)
 
 ## Contributors
 
