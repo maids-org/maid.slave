@@ -4,7 +4,7 @@
 
 <p align="center"><a href="https://maid.uz/slave"><img src="https://img.shields.io/static/v1.svg?style=flat-square&label=release&message=github&logoColor=eceff4&logo=github&colorA=000000&colorB=ffffff"/></a></p>
 
-<p align="center"> A slave to pet on your desktop!.</p>
+<p align="center"> A slave to pet on your desktop!</p>
 
 **This app was built with [electron.js](https://github.com/electron) in
 [Node.js](https://nodejs.org/en/). This app works as package modular, so don't
