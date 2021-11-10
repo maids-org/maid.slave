@@ -1,6 +1,6 @@
 {
   "name": "maid.slave",
-  "version": "1.0.3",
+  "version": "1.0.9",
   "description": "Maid Slave - A minimal slave for your desktop to pet",
   "homepage": "https://maid.uz",
   "repository": "https://github.com/mad-maids/maid.slave",
@@ -13,7 +13,6 @@
     "appId": "io.github.mad-maids.maid.slave",
     "productName": "Slave",
     "copyright": "CC0-1.0",
-    "buildVersion": "1.0.3",
     "mac": {
       "target": "dmg",
       "icon": "./icons/icon.icns",
