@@ -13,7 +13,6 @@
     "appId": "io.github.mad-maids.maid.slave",
     "productName": "Slave",
     "copyright": "CC0-1.0",
-    "buildVersion": "1.0.3",
     "mac": {
       "target": "dmg",
       "icon": "./icons/icon.icns",
