@@ -23,8 +23,8 @@ const darkIcon = nativeImage.createFromPath(
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 800, // 200,
-    height: 800, // 800,
+    width: 200, // 200,
+    height: 200, // 800,
     transparent: true,
     fullscreenable: false,
     backgroundColor: "#01FFFFFF",
@@ -41,7 +41,7 @@ function createWindow() {
 
   mainWindow.loadFile("index.html").then();
   mainWindow.setAlwaysOnTop(true);
-  mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
 }
 
 let tray = null;
