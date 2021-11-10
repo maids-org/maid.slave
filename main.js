@@ -132,6 +132,4 @@ if (process.platform === "darwin") {
   mainWindow.setSkipTaskbar(true);
 }
 
-console.log(process.platform)
-
 module.exports = { chosenSkin };
