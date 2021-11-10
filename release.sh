@@ -1,6 +1,5 @@
 # ask for input and save it for variable
-echo "Enter new version: "
-read -r version
+read -p "Enter new version: " -r version
 
 # edit version on package.json to input version
 edit_version() {
