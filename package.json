@@ -53,7 +53,10 @@
     "Petting",
     "Desktop"
   ],
-  "author": "Mad Maids",
+  "author": {
+    "name": "Mad Maids",
+    "email": "uwussimo@icloud.com"
+  },
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^15.3.1",
