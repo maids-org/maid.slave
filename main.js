@@ -84,7 +84,7 @@ function createTray() {
       },
     },
     {
-      label: "Change skin",
+      label: "Change skin of slave",
       submenu: skins.map((skin) => {
         return {
           label: skin.name,
