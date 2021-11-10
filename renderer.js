@@ -18,9 +18,16 @@ function emoteDelay() {
   }, 3000);
 }
 
+const emotes = [
+    "img/emotes/heart.png",
+    "img/emotes/happy.png",
+    "img/emotes/dotdot.png"
+]
+
 function emote() {
-  if (document.getElementById("emote").src !== "img/emotes/heart.png") {
-    document.getElementById("emote").src = "img/emotes/heart.png";
+  const randomEmote = emotes[Math.floor(Math.random() * emotes.length)];
+  if (document.getElementById("emote").src !== randomEmote) {
+    document.getElementById("emote").src = randomEmote;
     emoteDelay();
   }
 }
