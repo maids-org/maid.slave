@@ -23,8 +23,8 @@ const darkIcon = nativeImage.createFromPath(
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 200,
-    height: 200,
+    width: 200, // 200,
+    height: 200, // 800,
     transparent: true,
     fullscreenable: false,
     backgroundColor: "#01FFFFFF",
@@ -32,15 +32,32 @@ function createWindow() {
     frame: false,
     resizable: false,
     webPreferences: {
+      nodeIntegration: true,
+      contextIsolation: false,
       preload: path.join(__dirname, "preload.js"),
     },
   });
 
-  mainWindow.loadFile("index.html").then((r) => console.log(r));
+  mainWindow.loadFile("index.html").then();
   mainWindow.setAlwaysOnTop(true);
 }
 
 let tray = null;
+const skins = [
+  {
+    name: "Trans",
+    path: "img/character/subg/"
+  },
+  {
+    name: "Girl",
+    path: "img/character/dom/"
+  },
+  {
+    name: "Boi",
+    path: "img/character/subb/"
+  },
+]
+let chosenSkin = skins[0];
 function createTray() {
   if (darkMode) {
     tray = new Tray(darkIcon);
@@ -66,6 +83,20 @@ function createTray() {
         app.quit();
       },
     },
+    {
+      label: "Change skin",
+      submenu: skins.map((skin) => {
+        return {
+          label: skin.name,
+          type: "radio",
+          click: function () {
+            chosenSkin = skin;
+            mainWindow.webContents.send("SKIN", skin.path);
+          },
+          checked: skin === skins[0],
+        };
+      }),
+    }
   ]);
   tray.setToolTip("Slave Tooltips.");
   tray.setContextMenu(contextMenu);
@@ -93,3 +124,5 @@ app.on("window-all-closed", function () {
 });
 
 app.dock.hide();
+
+module.exports = { chosenSkin }
