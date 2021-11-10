@@ -1,10 +1,10 @@
 const {
   app,
-  BrowserWindow,
   Menu,
   Tray,
   nativeImage,
   nativeTheme,
+  BrowserWindow,
 } = require("electron");
 const path = require("path");
 
