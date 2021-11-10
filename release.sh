@@ -1,2 +1,2 @@
 yarn version
-git push --tags
+git push && git push --tags
