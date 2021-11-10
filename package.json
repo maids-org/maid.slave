@@ -35,8 +35,9 @@
     },
     "linux": {
       "target": [
-        "deb",
-        "tar.xz"
+        "AppImage",
+        "tar.xz",
+        "pacman"
       ],
       "icon": "./icons/icon.icns",
       "vendor": "Mad Maids",
