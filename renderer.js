@@ -19,10 +19,10 @@ function emoteDelay() {
 }
 
 const emotes = [
-    "img/emotes/heart.png",
-    "img/emotes/happy.png",
-    "img/emotes/dotdot.png"
-]
+  "img/emotes/heart.png",
+  "img/emotes/happy.png",
+  "img/emotes/dotdot.png",
+];
 
 function emote() {
   const randomEmote = emotes[Math.floor(Math.random() * emotes.length)];
