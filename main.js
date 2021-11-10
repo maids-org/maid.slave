@@ -128,8 +128,6 @@ app.on("window-all-closed", function () {
 
 if (process.platform === "darwin") {
   app.dock.hide();
-} else {
-  mainWindow.setSkipTaskbar(true);
 }
 
 module.exports = { chosenSkin };
