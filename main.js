@@ -31,6 +31,7 @@ function createWindow() {
     hasShadow: false,
     frame: false,
     resizable: false,
+    skipTaskbar: true,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
