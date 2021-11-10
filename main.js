@@ -46,17 +46,17 @@ let tray = null;
 const skins = [
   {
     name: "Trans",
-    path: "img/character/subg/"
+    path: "img/character/subg/",
   },
   {
     name: "Girl",
-    path: "img/character/dom/"
+    path: "img/character/dom/",
   },
   {
     name: "Boi",
-    path: "img/character/subb/"
+    path: "img/character/subb/",
   },
-]
+];
 let chosenSkin = skins[0];
 function createTray() {
   if (darkMode) {
@@ -96,7 +96,7 @@ function createTray() {
           checked: skin === skins[0],
         };
       }),
-    }
+    },
   ]);
   tray.setToolTip("Slave Tooltips.");
   tray.setContextMenu(contextMenu);
@@ -125,4 +125,4 @@ app.on("window-all-closed", function () {
 
 app.dock.hide();
 
-module.exports = { chosenSkin }
+module.exports = { chosenSkin };
