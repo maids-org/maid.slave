@@ -23,8 +23,8 @@ const darkIcon = nativeImage.createFromPath(
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 200, // 200,
-    height: 200, // 800,
+    width: 800, // 200,
+    height: 800, // 800,
     transparent: true,
     fullscreenable: false,
     backgroundColor: "#01FFFFFF",
@@ -41,6 +41,7 @@ function createWindow() {
 
   mainWindow.loadFile("index.html").then();
   mainWindow.setAlwaysOnTop(true);
+  mainWindow.webContents.openDevTools();
 }
 
 let tray = null;
@@ -124,6 +125,13 @@ app.on("window-all-closed", function () {
   if (process.platform !== "darwin") app.quit();
 });
 
-app.dock.hide();
+
+if (process.platform === "darwin") {
+  app.dock.hide();
+} else {
+  mainWindow.setSkipTaskbar(true);
+}
+
+console.log(process.platform)
 
 module.exports = { chosenSkin };
