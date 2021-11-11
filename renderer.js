@@ -1,10 +1,11 @@
 const { ipcRenderer } = require("electron");
 
 const chosenSkin = {
-  rest: "img/character/rest.gif",
-  defaults: "img/character/default.gif",
+  rest: window.process.argv.at(-1) + "rest.gif",
+  defaults: window.process.argv.at(-1) + "default.gif",
 };
 
+console.log(chosenSkin);
 ipcRenderer.on("SKIN", (event, data) => {
   chosenSkin.rest = data + "rest.gif";
   chosenSkin.defaults = data + "default.gif";
@@ -53,6 +54,8 @@ function startTimer(duration) {
 }
 
 window.onload = function () {
+  document.getElementById("pixelart").src =
+    window.process.argv.at(-1) + "default.gif";
   const secs = 10;
   startTimer(secs);
 };

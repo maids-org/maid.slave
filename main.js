@@ -57,6 +57,7 @@ function createWindow() {
       nodeIntegration: true,
       contextIsolation: false,
       preload: path.join(__dirname, "preload.js"),
+      additionalArguments: [`${store.get("skin")}`],
     },
   });
 
@@ -167,5 +168,3 @@ app.on("window-all-closed", function () {
 if (process.platform === "darwin") {
   app.dock.hide();
 }
-
-module.exports = { store }
