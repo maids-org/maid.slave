@@ -2,17 +2,28 @@ const {
   app,
   Menu,
   Tray,
+  dialog,
   nativeImage,
   nativeTheme,
   BrowserWindow,
 } = require("electron");
 const path = require("path");
+const Store = require("./store");
 
 if (require("electron-squirrel-startup")) {
   app.quit();
 }
 
-let mainWindow = null;
+let mainWindow;
+
+const store = new Store({
+  configName: "user-preferences",
+  defaults: {
+    windowLocation: null,
+    theme: nativeTheme.shouldUseDarkColors ? "dark" : "light",
+  },
+});
+
 const darkMode = require("electron").nativeTheme.shouldUseDarkColors;
 const lightIcon = nativeImage.createFromPath(
   path.join(__dirname + "/icons/tray", "tray-22.png")
@@ -23,8 +34,16 @@ const darkIcon = nativeImage.createFromPath(
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 200, // 200,
-    height: 200, // 800,
+    x:
+      store.get("windowLocation") !== null
+        ? store.get("windowLocation")[0]
+        : null,
+    y:
+      store.get("windowLocation") !== null
+        ? store.get("windowLocation")[1]
+        : null,
+    width: 200, // 200, for dev use 800
+    height: 200, // 200, for dev use 800
     transparent: true,
     fullscreenable: false,
     backgroundColor: "#01FFFFFF",
@@ -41,10 +60,12 @@ function createWindow() {
 
   mainWindow.loadFile("index.html").then();
   mainWindow.setAlwaysOnTop(true);
+
+  // If you need devtools
   // mainWindow.webContents.openDevTools();
 }
 
-let tray = null;
+let tray;
 const skins = [
   {
     name: "Trans",
@@ -70,13 +91,27 @@ function createTray() {
     {
       label: "Make slave work",
       click: function () {
-        mainWindow.show();
+        if (BrowserWindow.getAllWindows().length === 0) {
+          createWindow();
+        } else {
+          mainWindow.show();
+        }
       },
     },
     {
       label: "Hide slave for a while",
       click: function () {
-        mainWindow.hide();
+        if (BrowserWindow.getAllWindows().length === 0) {
+          dialog
+            .showMessageBox({
+              type: "info",
+              icon: path.join(__dirname, "icons", "icon.png"),
+              message: "I thought we were already playing hide and seek!?",
+            })
+            .then();
+        } else {
+          mainWindow.hide();
+        }
       },
     },
     {
@@ -111,7 +146,6 @@ function updateMyAppTheme(isDark) {
 app.whenReady().then(() => {
   createTray();
   createWindow();
-
   app.on("activate", function () {
     if (BrowserWindow.getAllWindows().length === 0) createWindow();
   });
@@ -121,6 +155,10 @@ nativeTheme.on("updated", function theThemeHasChanged() {
   updateMyAppTheme(nativeTheme.shouldUseDarkColors);
 });
 
+app.on("before-quit", function () {
+  store.set("windowLocation", mainWindow.getPosition());
+});
+
 app.on("window-all-closed", function () {
   if (process.platform !== "darwin") app.quit();
 });
@@ -128,5 +166,3 @@ app.on("window-all-closed", function () {
 if (process.platform === "darwin") {
   app.dock.hide();
 }
-
-module.exports = { chosenSkin };
