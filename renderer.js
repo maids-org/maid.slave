@@ -6,7 +6,6 @@ const chosenSkin = {
 };
 
 ipcRenderer.on("SKIN", (event, data) => {
-  // IPC event listener
   chosenSkin.rest = data + "rest.gif";
   chosenSkin.defaults = data + "default.gif";
   document.getElementById("pixelart").src = chosenSkin.defaults;

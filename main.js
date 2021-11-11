@@ -9,6 +9,7 @@ const {
 } = require("electron");
 const path = require("path");
 const Store = require("./store");
+// const electron = require("electron");
 
 if (require("electron-squirrel-startup")) {
   app.quit();
@@ -19,6 +20,7 @@ let mainWindow;
 const store = new Store({
   configName: "user-preferences",
   defaults: {
+    skin: "img/character/subg/",
     windowLocation: null,
     theme: nativeTheme.shouldUseDarkColors ? "dark" : "light",
   },
@@ -60,7 +62,6 @@ function createWindow() {
 
   mainWindow.loadFile("index.html").then();
   mainWindow.setAlwaysOnTop(true);
-
   // If you need devtools
   // mainWindow.webContents.openDevTools();
 }
@@ -80,7 +81,7 @@ const skins = [
     path: "img/character/subb/",
   },
 ];
-let chosenSkin = skins[0];
+
 function createTray() {
   if (darkMode) {
     tray = new Tray(darkIcon);
@@ -127,10 +128,10 @@ function createTray() {
           label: skin.name,
           type: "radio",
           click: function () {
-            chosenSkin = skin;
             mainWindow.webContents.send("SKIN", skin.path);
+            store.set("skin", skin.path);
           },
-          checked: skin === skins[0],
+          checked: skin.path === store.get("skin"),
         };
       }),
     },
@@ -166,3 +167,5 @@ app.on("window-all-closed", function () {
 if (process.platform === "darwin") {
   app.dock.hide();
 }
+
+module.exports = { store }
