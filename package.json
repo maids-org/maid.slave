@@ -61,7 +61,7 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^15.3.1",
-    "electron-builder": "^22.13.1",
+    "electron-builder": "^22.14.13",
     "prettier": "^2.4.1"
   },
   "dependencies": {
